@@ -1,22 +1,21 @@
-const Counter = (props: CounterProps) => {
-  const increaseCounter = (number: number = 1) => {
-    console.log(props);
-    props.handleCounter(number);
-  };
+import { useState } from "react";
 
-  const resetCounter = (number: number = 0) => {
-    props.handleCounter(number);
-    console.log("reset");
+const Counter = () => {
+  const [counter, setCounter] = useState(0);
+  // valor 1 por defecto
+  const increaseCounter = (number: number = 1) => {
+    console.log(counter);
+    setCounter(counter + number);
   };
 
   return (
     <>
       <div className="mt-2">
         <h4>Counter</h4>
-        <p>Valor: {props.counter}</p>
+        <p>Valor: {counter}</p>
         <button
           className="btn btn-outline-primary m-t2"
-          onClick={() => increaseCounter(1)}
+          onClick={() => increaseCounter()}
         >
           +1
         </button>
@@ -28,7 +27,7 @@ const Counter = (props: CounterProps) => {
         </button>
         <button
           className="btn btn-outline-danger m-t2"
-          onClick={() => resetCounter(0)}
+          onClick={() => setCounter(0)}
         >
           Reset
         </button>
@@ -37,10 +36,10 @@ const Counter = (props: CounterProps) => {
   );
 };
 
-type CounterProps = {
-  handleCounter: Function;
-  handleResetCounter: Function;
-  counter: number;
-};
+// type CounterProps = {
+//   handleCounter: Function;
+//   // handleResetCounter: Function;
+//   // counter: number;
+// };
 
 export default Counter;
