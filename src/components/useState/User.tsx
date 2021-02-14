@@ -1,5 +1,5 @@
 const User = (props: UserProps) => {
-  console.log(props);
+  // console.log(props);
   const loginUser = () => {
     props.handleUser();
   };

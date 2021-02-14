@@ -7,8 +7,9 @@ import User from "./useState/User";
 import IUser from "./useState/interface/interface";
 import TimerParent from "./useEffRef/TimerParent";
 import CounterRed from "./useRed/CounterRed";
+import Form from "./form/Form";
 
-const App: React.FC = () => {
+function App(): JSX.Element {
   const [user, setUser] = useState<IUser>();
 
   // events
@@ -43,8 +44,11 @@ const App: React.FC = () => {
           <hr />
         </section>
       </main>
+      <aside>
+        <Form />
+      </aside>
     </React.Fragment>
   );
-};
+}
 
 export default App;
