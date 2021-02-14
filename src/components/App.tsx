@@ -8,7 +8,7 @@ import IUser from "./useState/interface/interface";
 import TimerParent from "./useEffRef/TimerParent";
 import CounterRed from "./useRed/CounterRed";
 
-const App = () => {
+const App: React.FC = () => {
   const [user, setUser] = useState<IUser>();
 
   // events
@@ -40,6 +40,7 @@ const App = () => {
         <section>
           <h2>UseReducer</h2>
           <CounterRed />
+          <hr />
         </section>
       </main>
     </React.Fragment>
