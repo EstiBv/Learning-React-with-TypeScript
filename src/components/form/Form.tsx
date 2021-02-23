@@ -39,6 +39,7 @@ const Form = () => {
   };
   return (
     <Fragment>
+      <h2>Form</h2>
       <form className="input-group mb-3" onSubmit={handleSubmit}>
         <input
           className="form-control"
